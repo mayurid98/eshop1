@@ -1,0 +1,30 @@
+<p>mens works!</p>
+
+<!-- <button (click)="clickme()">click me</button> -->
+<router-outlet></router-outlet>
+<div >
+    <h1 style="color:lightgreen;text-align:center">Mens Product Data</h1>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Watch</th>
+        <th>Shoes</th>
+        <th>Cloths</th>
+        <th>Perfumes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of mens_product; index as i">
+        <td>{{i+1}}</td>
+        <td>{{data.watch}}</td>
+        <td>{{data.shoes}}</td>
+        <td>{{data.cloths}}</td>
+        <td>{{data.perfumes}}</td>
+        <td><button (click)="edit_data(i)">Edit</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

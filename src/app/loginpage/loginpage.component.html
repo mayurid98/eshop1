@@ -1,0 +1,43 @@
+
+<div class="formdiv">
+<form [formGroup]="loginform" style="margin:10px; ">
+  
+    <label>Email_id : <span style="color: red;">*</span></label><br>
+    <input type="email" formControlName ="email_id" >
+    <div *ngIf="loginform.controls['email_id'].invalid 
+                && loginform.controls['email_id'].dirty
+                || loginform.controls['email_id'].touched">
+
+                <div *ngIf="loginform.controls['email_id'].errors?.['required']">
+                    please enter required field
+                </div>
+                
+                <div *ngIf="loginform.controls['email_id'].errors?.['email']">
+                        email_id is invalid
+                </div>
+
+    </div>
+    <br>
+
+    <label>Password : <span style="color: red;">*</span></label><br>
+    <input type="password" formControlName="password"  >
+    <!-- <div *ngIf="loginform.controls['password'].invalid 
+             && loginform.controls['password'].dirty
+             || loginform.controls['password'].touched"> -->
+             
+        <div *ngIf="loginform.controls['password'].errors?.['required']">
+                    please enter reuired field
+       </div>
+        <div *ngIf="password.errors?.['passwordStrength']">
+              Your password must have lower case, upper case <br>
+              and numeric characters and special symbol
+        </div>
+  
+    <!-- </div> -->
+<br><br>
+
+</form>
+<button type="submit" (click)="login_details()"appCustomhilighter>Login</button>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
